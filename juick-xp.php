@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: Juick Crossposter
-Plugin URI: http://sand-fox.com/projects/juick-xp.html
+Plugin URI: http://sandfox.org/projects/juick-xp.html
 Description: A simple Juick.com crossposter plugin
-Version: 0.2
+Version: 0.3.1
 Author: Sand Fox
-Author URI: http://sand-fox.com/
+Author URI: http://sandfox.im/
 License: Apache 2.0 / GNU GPL v2
 */
 
@@ -13,9 +13,6 @@ add_action('publish_post', 'juickxp_post');
 
 function juickxp_post($post_id)
 {
-    //register_setting('juickxp-settings', 'juickxp_jtags_categories');
-    //register_setting('juickxp-settings', 'juickxp_jtags_tags');
-
     $juick = get_option('juickxp_custom_jid');
     $include_text = get_option('juickxp_include_text', false);
 
@@ -124,10 +121,7 @@ function juickxp_settings_page() {
     ?>
     <div class="wrap">
     <h2>Juick XP Settings</h2>
-    <?php
-
-    if(!function_exists('xmpp_send'))
-    {
+    <?php if(!function_exists('xmpp_send')):
         ?><p style="color: red">Error: <strong>XMPP Enabled</strong> is not installed.
         Please install the <strong>XMPP Enabled</strong> plugin for this plugin to work</p>
 
@@ -136,15 +130,15 @@ function juickxp_settings_page() {
                 http://wordpress.org/extend/plugins/xmpp-enabled/</a>
             </li>
             <li>
-                <a href="http://westland-avs.info/projects/xmpp-enabled">
-                http://westland-avs.info/projects/xmpp-enabled</a>
+                <a href="http://sandfox.org/projects/xmpp-enabled.html">
+                http://sandfox.org/projects/xmpp-enabled.html</a>
             </li>
         </ul>
 
         <hr/>
 
         <?php
-    }
+    endif;
 
     ?>
 
@@ -159,16 +153,16 @@ function juickxp_settings_page() {
             </tr>
             <tr>
                 <th scope="row" colspan="2">
-                    <input type="checkbox" value="1" name="juickxp_jtags_categories"
+                    <input type="checkbox" value="1" name="juickxp_jtags_categories" id="juickxp_jtags_categories"
                         <?php if(get_option('juickxp_jtags_categories', true)) echo 'checked="checked"' ?>
-                    /> Include post categories as Juick tags
+                    /> <label for="juickxp_jtags_categories">Include post categories as Juick tags</label>
                 </th>
             </tr>
             <tr>
                 <th scope="row" colspan="2">
-                    <input type="checkbox" value="1" name="juickxp_jtags_tags"
+                    <input type="checkbox" value="1" name="juickxp_jtags_tags" id="juickxp_jtags_tags"
                         <?php if(get_option('juickxp_jtags_tags', true)) echo 'checked="checked"' ?>
-                    /> Include post tags as Juick tags
+                    /> <label for="juickxp_jtags_tags">Include post tags as Juick tags</label>
                 </th>
             </tr>
             <tr>
@@ -178,9 +172,9 @@ function juickxp_settings_page() {
             </tr>
             <tr>
                 <th scope="row" colspan="2">
-                    <input type="checkbox" value="1" name="juickxp_include_text"
+                    <input type="checkbox" value="1" name="juickxp_include_text" id="juickxp_include_text"
                         <?php if(get_option('juickxp_include_text', false)) echo 'checked="checked"' ?>
-                    /> Include excerpt<br/><small>Experimental feature</small>
+                    /> <label for="juickxp_include_text">Include excerpt<br/><small>Experimental feature</small></label>
                 </th>
             </tr>
             <tr valign="top">
