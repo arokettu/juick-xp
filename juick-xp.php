@@ -1,12 +1,12 @@
 <?php
 /**
  * Plugin Name: Juick Crossposter
- * Plugin URI: http://sandfox.org/projects/juick-xp.html
+ * Plugin URI: https://github.com/sandfox-im/juick-xp
  * Description: A simple Juick.com crossposter plugin
  * Version: 0.3.1
  * Author: Sand Fox
  * Author URI: http://sandfox.im/
- * License: Apache 2.0 / GNU GPL v2
+ * License: GNU GPL v2
  */
 
 add_action('publish_post', 'juickxp_post');

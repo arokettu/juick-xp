@@ -1,8 +1,8 @@
 === Plugin Name ===
-Contributors: Sand Fox
+Contributors: sandfox
 Tags: microblogging, juick, jabber
 Requires at least: 3.0
-Tested up to: 3.6
+Tested up to: 3.9
 Stable tag: trunk
 
 Crosspost your messages to Juick.com
