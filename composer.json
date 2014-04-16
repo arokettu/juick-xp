@@ -3,6 +3,7 @@
     "description": "A WordPress Plugin to crosspost your messages to Juick.com",
     "keywords": ["WordPress", "Juick"],
     "type": "wordpress-plugin",
+    "homepage": "https://github.com/sandfox-im/juick-xp",
     "require": {
         "sandfox-im/xmpp-enabled": "~1.0",
         "composer/installers": "~1.0"
@@ -13,5 +14,8 @@
             "name": "Anton Smirnov",
             "email": "sandfox@sandfox.im"
         }
-    ]
+    ],
+    "support": {
+        "issues": "https://github.com/sandfox-im/juick-xp/issues"
+    }
 }
